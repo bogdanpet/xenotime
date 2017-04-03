@@ -11,6 +11,11 @@
 |
 */
 
+//Admin routes
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'DashboardController@index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
