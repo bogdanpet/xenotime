@@ -12,7 +12,7 @@
 */
 
 //Admin routes
-Route::group(['prefix' => 'admin'], function () {
+Route::group([ 'prefix' => env('APP_ADMIN', 'admin') ], function () {
     Route::get('/', 'DashboardController@index');
 });
 

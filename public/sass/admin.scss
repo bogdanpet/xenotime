@@ -1,2 +1,105 @@
 @import 'bootstrap';
+@import 'bootswatch';
 @import 'font-awesome';
+
+// Global
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #e8e8e8;
+}
+
+// Topbar
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    padding-left: 0;
+    color: #eee;
+    background-color: #333;
+    transition: all 0.3s;
+}
+
+@media (min-width: 992px) {
+    .topbar {
+        padding-left: 281px;
+    }
+}
+
+.topbar.sidebar-open {
+    padding-left: 281px;
+    transition: all 0.3s;
+}
+
+.topbar-title {
+    float: left;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px;
+}
+
+.sidebar-toggle {
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+    font-size: 1.5em;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+// Sidebar
+
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    transition: all 0.3s;
+}
+
+.sidebar-wrapper.open {
+    width: 281px;
+    transition: all 0.3s;
+}
+
+@media (min-width: 992px) {
+    .sidebar-wrapper {
+        width: 281px;
+    }
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    height: 100%;
+    width: 281px;
+    background-color: #333;
+    border-right: solid 1px #999;
+}
+
+.admin-navigation {
+    padding-top: 50px;
+
+    .nav a {
+        color: #eee;
+
+        &:hover {
+            background-color: #222;
+        }
+
+        .fa {
+            font-size: 20px;
+            line-height: 32px;
+            margin-top: -4px;
+        }
+    }
+}
