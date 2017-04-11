@@ -11,7 +11,13 @@ class UsersDatatable extends Datatable
 
     public function rowNum($id)
     {
-        return '<td>' . $this->increment . '</td>';
+        if (isset($_GET['page'])) {
+            $row_num = ($_GET['page'] - 1) * 15 + $this->increment;
+        } else {
+            $row_num = $this->increment;
+        }
+
+        return '<td>' . $row_num . '</td>';
     }
 
     public function actions($id)

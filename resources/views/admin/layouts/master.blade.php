@@ -21,7 +21,7 @@
 		<div class="admin-navigation">
 			<ul class="nav nav-stacked">
 				<li><a href="{{ admin_url() }}"><i class="fa fa-home"></i> Dashboard</a></li>
-				<li><a href="{{ admin_url('users') }}"><i class="fa fa-users"></i> Users</a></li>
+				<li><a href="{{ admin_url('users') }}"><i class="fa fa-user"></i> Users</a></li>
 			</ul>
 		</div>
 	</div>

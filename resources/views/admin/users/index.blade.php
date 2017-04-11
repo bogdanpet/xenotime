@@ -26,6 +26,10 @@
 					</tbody>
 				</table>
 			</div>
+
+			<div class="panel-footer text-center">
+				{!! $users->render() !!}
+			</div>
 		</div>
 	</main>
 @endsection

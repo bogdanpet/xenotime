@@ -10,10 +10,10 @@ class UsersController extends Controller
 {
     public function index(UsersDatatable $datatable)
     {
-        $users = User::all();
+        $users = User::paginate();
         $datatable->setData($users);
 
-        return view('admin.users.index', compact('datatable'));
+        return view('admin.users.index', compact('datatable', 'users'));
     }
 
     public function show($id)
