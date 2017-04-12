@@ -12,7 +12,7 @@
 
 		<div class="panel panel-default" style="border-top: none;">
 			<div class="table-responsive">
-				<table class="table">
+				<table class="table table-hover">
 					<thead>
 					<tr>
 						<th class="small">#</th>

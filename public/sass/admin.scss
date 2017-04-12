@@ -53,6 +53,38 @@ body {
     cursor: pointer;
 }
 
+.auth-user {
+    float: right;
+    font-size: 16px;
+    line-height: 24px;
+
+    a {
+        padding: 8px 15px !important;
+        color: #eee;
+
+        &:hover,
+        &:focus {
+            background-color: #222 !important;
+        }
+    }
+
+    .open > a {
+        background-color: #222 !important;
+    }
+
+    .dropdown-menu {
+        background-color: #333;
+
+        a {
+            color: #eee;
+
+            &:hover {
+                color: #eee;
+            }
+        }
+    }
+}
+
 // Sidebar
 
 .sidebar-wrapper {

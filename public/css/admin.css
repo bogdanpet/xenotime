@@ -8428,6 +8428,37 @@ body {
   float: left;
   cursor: pointer; }
 
+.auth-user {
+	float: right;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.auth-user a {
+	padding: 8px 15px !important;
+	color: #eee;
+}
+
+.auth-user a:hover, .auth-user a:focus {
+	background-color: #222 !important;
+}
+
+.auth-user .open > a {
+	background-color: #222 !important;
+}
+
+.auth-user .dropdown-menu {
+	background-color: #333;
+}
+
+.auth-user .dropdown-menu a {
+	color: #eee;
+}
+
+.auth-user .dropdown-menu a:hover {
+	color: #eee;
+}
+
 .sidebar-wrapper {
   position: fixed;
   top: 0;
@@ -8477,7 +8508,6 @@ body {
 		padding-left: 301px;
 	}
 }
-
 .submenu .nav {
 	padding-left: 10px;
 }

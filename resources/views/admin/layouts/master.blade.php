@@ -14,6 +14,17 @@
 <div class="topbar">
 	<div class="sidebar-toggle visible-xs visible-sm"><i class="fa fa-bars"></i></div>
 	<div class="topbar-title hidden-xs">{{ env('SITE_NAME') }} Admin</div>
+	<div class="auth-user">
+		<ul class="nav">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Hello, {{ \Illuminate\Support\Facades\Auth::user()->name }} <span class="caret"></span></a>
+				<ul class="dropdown-menu dropdown-menu-right">
+					<li><a href="{{ admin_url('user/' . \Illuminate\Support\Facades\Auth::user()->id) }}">Profile</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
 </div>
 
 <div class="sidebar-wrapper">

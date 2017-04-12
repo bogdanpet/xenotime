@@ -30,7 +30,15 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name'     => 'required|regex:/^[(a-zA-Z\s)]+$/u|min:2|max:255',
+            'email'    => 'required|unique:users|email|max:255',
+            'password' => 'required|confirmed|min:6'
+        ]);
+
         $inputs = $request->all();
+
+        $inputs['password'] = bcrypt($inputs['password']);
 
         User::create($inputs);
 
@@ -46,10 +54,18 @@ class UsersController extends Controller
 
     public function update($id, Request $request)
     {
+        $this->validate($request, [
+            'name'     => 'required|regex:/^[(a-zA-Z\s)]+$/u|min:2|max:255',
+            'email'    => 'required|unique:users|email|max:255',
+            'password' => 'confirmed|min:6'
+        ]);
+
         $inputs = $request->all();
 
         unset($inputs['_token']);
         unset($inputs['password_confirmation']);
+
+        $inputs['password'] = bcrypt($inputs['password']);
 
         User::whereId($id)->update($inputs);
 

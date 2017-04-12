@@ -12,7 +12,10 @@
 */
 
 //Admin routes
-Route::group([ 'prefix' => env('APP_ADMIN', 'admin') ], function () {
+Route::group([
+    'prefix'     => env('APP_ADMIN', 'admin'),
+    'middleware' => 'auth'
+], function () {
 
     Route::get('/', 'DashboardController@index');
 
@@ -25,6 +28,16 @@ Route::group([ 'prefix' => env('APP_ADMIN', 'admin') ], function () {
     Route::get('user/delete/{id}', 'UsersController@delete');
 });
 
+// Frontend routes
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+Route::get('/logout', function () {
+    \Illuminate\Support\Facades\Auth::logout();
+
+    return redirect('/login');
+});
+
+//Route::get('/home', 'HomeController@index');
