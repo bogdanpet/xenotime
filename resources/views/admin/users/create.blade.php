@@ -13,6 +13,9 @@
 		<div class="panel panel-default" style="border-top: none;">
 			<div class="panel-body">
 				<form action="{{ admin_url('users/create') }}" method="post">
+
+					@include('admin.components.errors')
+					
 					{{ csrf_field() }}
 					<div class="form-group">
 						<label for="name" class="control-label">Name</label>

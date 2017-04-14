@@ -55,17 +55,24 @@ class UsersController extends Controller
     public function update($id, Request $request)
     {
         $this->validate($request, [
-            'name'     => 'required|regex:/^[(a-zA-Z\s)]+$/u|min:2|max:255',
-            'email'    => 'required|unique:users|email|max:255',
-            'password' => 'confirmed|min:6'
+            'name' => 'required|regex:/^[(a-zA-Z\s)]+$/u|min:2|max:255'
         ]);
 
         $inputs = $request->all();
 
+        if ( ! empty($inputs['password'])) {
+            $this->validate($request, [
+                'password' => 'confirmed|min:6'
+            ]);
+
+            $inputs['password'] = bcrypt($inputs['password']);
+        } else {
+            unset($inputs['password']);
+        }
+
         unset($inputs['_token']);
         unset($inputs['password_confirmation']);
-
-        $inputs['password'] = bcrypt($inputs['password']);
+        unset($inputs['email']);
 
         User::whereId($id)->update($inputs);
 

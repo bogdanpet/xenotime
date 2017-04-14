@@ -26,6 +26,8 @@ Route::group([
     Route::get('user/edit/{id}', 'UsersController@edit');
     Route::post('user/edit/{id}', 'UsersController@update');
     Route::get('user/delete/{id}', 'UsersController@delete');
+
+    Route::get('posts', 'PostsController@index');
 });
 
 // Frontend routes

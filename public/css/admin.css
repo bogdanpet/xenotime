@@ -8408,9 +8408,11 @@ body {
 
 @media (min-width: 992px) {
   .topbar {
-    padding-left: 281px; } }
+		padding-left: 241px;
+	}
+}
 .topbar.sidebar-open {
-  padding-left: 281px;
+	padding-left: 241px;
   transition: all 0.3s; }
 
 .topbar-title {
@@ -8469,12 +8471,14 @@ body {
   transition: all 0.3s; }
 
 .sidebar-wrapper.open {
-  width: 281px;
+	width: 241px;
   transition: all 0.3s; }
 
 @media (min-width: 992px) {
   .sidebar-wrapper {
-    width: 281px; } }
+		width: 241px;
+	}
+}
 .sidebar {
   position: absolute;
   top: 0;
@@ -8482,7 +8486,7 @@ body {
   bottom: 0;
   left: auto;
   height: 100%;
-  width: 281px;
+	width: 241px;
   background-color: #333;
   border-right: solid 1px #999; }
 
@@ -8505,7 +8509,7 @@ body {
 
 @media (min-width: 992px) {
 	.main-container {
-		padding-left: 301px;
+		padding-left: 261px;
 	}
 }
 .submenu .nav {
@@ -8520,6 +8524,11 @@ th.small {
 td {
 	white-space: nowrap;
 	vertical-align: middle !important;
+}
+
+.login-container {
+	margin-top: 10%;
+	max-width: 400px;
 }
 
 /*# sourceMappingURL=admin.css.map */

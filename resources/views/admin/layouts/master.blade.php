@@ -5,7 +5,7 @@
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>{{ env('SITE_NAME') }} Admin</title>
+	<title>{{ env('SITE_NAME') }} | Admin</title>
 
 	<link rel="stylesheet" href="/css/admin.css">
 </head>
@@ -17,7 +17,10 @@
 	<div class="auth-user">
 		<ul class="nav">
 			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Hello, {{ \Illuminate\Support\Facades\Auth::user()->name }} <span class="caret"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+					<span class="hidden-xs">Hello, {{ \Illuminate\Support\Facades\Auth::user()->name }} </span>
+					<span class="caret"></span>
+				</a>
 				<ul class="dropdown-menu dropdown-menu-right">
 					<li><a href="{{ admin_url('user/' . \Illuminate\Support\Facades\Auth::user()->id) }}">Profile</a></li>
 					<li><a href="/logout">Logout</a></li>
@@ -32,6 +35,7 @@
 		<div class="admin-navigation">
 			<ul class="nav nav-stacked">
 				<li><a href="{{ admin_url() }}"><i class="fa fa-home"></i> Dashboard</a></li>
+				<li><a href="{{ admin_url('posts') }}"><i class="fa fa-pencil"></i> Posts</a></li>
 				<li><a href="{{ admin_url('users') }}"><i class="fa fa-user"></i> Users</a></li>
 			</ul>
 		</div>

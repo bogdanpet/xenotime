@@ -12,6 +12,9 @@
 
 		<div class="panel panel-default" style="border-top: none;">
 			<div class="panel-body">
+
+				@include('admin.components.errors')
+
 				<form action="{{ admin_url('user/edit/' . $user->id) }}" method="post">
 					{{ csrf_field() }}
 					<div class="form-group">
@@ -20,7 +23,7 @@
 					</div>
 					<div class="form-group">
 						<label for="email" class="control-label">E-mail</label>
-						<input type="text" name="email" id="email" class="form-control" value="{{ $user->email }}">
+						<input type="text" name="email" id="email" class="form-control" value="{{ $user->email }}" disabled>
 					</div>
 					<div class="form-group">
 						<label for="password" class="control-label">Password</label>
