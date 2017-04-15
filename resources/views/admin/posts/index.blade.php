@@ -17,6 +17,7 @@
 					<tr>
 						<th class="small">#</th>
 						<th>Title</th>
+						<th class="small">Author</th>
 						<th class="small">ID</th>
 						<th class="small">Actions</th>
 					</tr>

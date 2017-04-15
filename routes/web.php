@@ -28,6 +28,8 @@ Route::group([
     Route::get('user/delete/{id}', 'UsersController@delete');
 
     Route::get('posts', 'PostsController@index');
+    Route::get('posts/create', 'PostsController@create');
+    Route::post('posts/create', 'PostsController@store');
 });
 
 // Frontend routes
