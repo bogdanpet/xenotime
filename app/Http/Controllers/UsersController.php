@@ -10,7 +10,7 @@ class UsersController extends Controller
 {
     public function index(UsersDatatable $datatable)
     {
-        $users = User::paginate();
+        $users = User::paginate(10);
         $datatable->setData($users);
 
         return view('admin.users.index', compact('datatable', 'users'));

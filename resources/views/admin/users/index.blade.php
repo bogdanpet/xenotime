@@ -12,23 +12,7 @@
 
 		<div class="panel panel-default" style="border-top: none;">
 			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-					<tr>
-						<th class="small">#</th>
-						<th>Name</th>
-						<th class="small">ID</th>
-						<th class="small">Actions</th>
-					</tr>
-					</thead>
-					<tbody>
-					{!! $datatable->show() !!}
-					</tbody>
-				</table>
-			</div>
-
-			<div class="panel-footer text-center">
-				{!! $users->render() !!}
+				{!! $datatable->show(['class' => 'table table-hover']) !!}
 			</div>
 		</div>
 	</main>

@@ -10,32 +10,27 @@ class PostsDatatable extends Datatable
         'actions'
     ];
 
-    public function rowNum($id)
+    public function thAuthor()
     {
-        if (isset($_GET['page'])) {
-            $row_num = ($_GET['page'] - 1) * 15 + $this->increment;
-        } else {
-            $row_num = $this->increment;
-        }
-
-        return '<td>' . $row_num . '</td>';
+        return $this->th('Author', 'small');
     }
 
-    public function author($id)
+    public function tdAuthor($model)
     {
-        return '<td>' . $this->data->find($id)->user->name . '</td>';
+        return $this->td($model->user->name, 'small');
     }
 
-    public function actions($id)
+    public function thActions()
     {
-        return '<td>' . $this->actionButtons($id) . '</td>';
+        return $this->th('Actions', 'small');
     }
 
-    protected function actionButtons($id)
+    public function tdActions($model)
     {
-        $buttons = '<a href="' . admin_url('post/edit/' . $id) . '" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>' . PHP_EOL;
-        $buttons .= '<a href="' . admin_url('post/delete/' . $id) . '" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
-
-        return $buttons;
+        return $this->td(
+            $this->actionButton('post/edit', $model, 'pencil', 'warning') .
+            $this->actionButton('post/delete', $model, 'trash', 'danger'),
+            'small'
+        );
     }
 }

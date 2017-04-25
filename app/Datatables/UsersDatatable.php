@@ -9,28 +9,18 @@ class UsersDatatable extends Datatable
         'actions'
     ];
 
-    public function rowNum($id)
+    public function thActions()
     {
-        if (isset($_GET['page'])) {
-            $row_num = ($_GET['page'] - 1) * 15 + $this->increment;
-        } else {
-            $row_num = $this->increment;
-        }
-
-        return '<td>' . $row_num . '</td>';
+        return $this->th('Actions', 'small');
     }
 
-    public function actions($id)
+    public function tdActions($model)
     {
-        return '<td>' . $this->actionButtons($id) . '</td>';
-    }
-
-    protected function actionButtons($id)
-    {
-        $buttons = '<a href="' . admin_url('user/' . $id) . '" class="btn btn-info btn-sm"><i class="fa fa-user"></i></a>' . PHP_EOL;
-        $buttons .= '<a href="' . admin_url('user/edit/' . $id) . '" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>' . PHP_EOL;
-        $buttons .= '<a href="' . admin_url('user/delete/' . $id) . '" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
-
-        return $buttons;
+        return $this->td(
+            $this->actionButton('user', $model, 'user', 'info') .
+            $this->actionButton('user/edit', $model, 'pencil', 'warning') .
+            $this->actionButton('user/delete', $model, 'trash', 'danger'),
+            'small'
+        );
     }
 }
