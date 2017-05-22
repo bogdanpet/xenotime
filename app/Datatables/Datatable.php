@@ -10,14 +10,14 @@ class Datatable
 
     protected $increment = 0;
 
-    protected static $instance = null;
+    protected static $instance;
 
     public function __construct()
     {
         self::$instance = $this;
     }
 
-    public static function render(\IteratorAggregate $data, array $columns, array $table_attributes = [ 'class' => 'table' ])
+    public static function make(\IteratorAggregate $data, array $columns, array $table_attributes = [ 'class' => 'table' ])
     {
         self::$instance->setData($data);
         self::$instance->columns = $columns;
